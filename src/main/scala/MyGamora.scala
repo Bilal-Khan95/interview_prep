@@ -9,5 +9,4 @@ object MyGamora extends App{
       print(addSum)
   }
   addFunc()
-  print("test")
 }
