@@ -53,4 +53,4 @@ object CreditCardNumberChecker extends App {
     }
   }
 
-} // use arrays instead of string, easier to work with
+} // use arrays instead of string, easier to work witH
