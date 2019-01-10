@@ -1,7 +1,7 @@
 object CreditCardNumberChecker extends App {
-    def numChecker(a:String){
-      for(i <- a.length){
-        val b = a.reverse.toInt
+    def numChecker(numInput:String){
+      for(i <- numInput.length){
+        val b = numInput.reverse.toInt
 
 
       }
