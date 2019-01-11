@@ -1,7 +1,7 @@
 object Cypher extends App{
   import scala.io.StdIn.readLine
 
-  println("Enter a word")
+  println("Enter a Sentence")
   val wordInput = readLine.toLowerCase
   var newWord:String = ""
   atBashEncoder(wordInput)
