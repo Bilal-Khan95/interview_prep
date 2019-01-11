@@ -4,17 +4,18 @@ object Factorial extends App{
   println("Enter a number:")
   val numInput = readInt()
   factorialFinder(numInput)
-  def factorialFinder(a:Int){
-    var x = 1
-    var y = 1
-    while(y<a){
-      x = x + 1
-      y = y*x
+
+  def factorialFinder(inputNum:Int){
+    var multiplier = 1
+    var result = 1
+    while(result < inputNum){
+      multiplier += 1
+      result = result*multiplier
     }
-    if(y == a){
-      println(s"$a is a factorial of $x")
+    if(result == inputNum){
+      println(s"$inputNum is a factorial of $multiplier")
     }else{
-      println(s"$a is not a factorial of anything")
+      println(s"$inputNum is not a factorial of anything")
     }
   }
 
