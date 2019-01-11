@@ -1,18 +1,25 @@
 import scala.Predef._
-import scala.io.StdIn.{readLine, readLong}
+import scala.io.StdIn.readLine
 object CreditCardNumberChecker extends App {
 
   println("Enter a number sequence")
-  val numInput = readLine
+  val numInput = readLine()
+  var numForUse = Array[Int]()
   var totalNumber = 0
-  println(numInput.toArray.foreach(println))
-  checkNumAdder(numInput)
+  stringToArray(numInput)
+  checkNumAdder(numForUse)
 
-  def luhnAlgorithm(numAsString:String):Boolean ={
-    val numStrReverse = numAsString.reverse
-    val idNum = strToInt(numStrReverse.substring(0,1))
-    for(i <- 1 until numAsString.length){
-      var numIndex = strToInt(numStrReverse.substring(i,i+1))
+  def stringToArray(a:String): Unit ={
+    for(i <- 0 until a.length){
+      numForUse = numForUse :+ a.substring(i,i+1).toInt
+    }
+  }
+
+  def luhnAlgorithm(numAsArray:Array[Int]):Boolean={
+    val numArrReverse = numAsArray.reverse
+    val idNum = numAsArray(numAsArray.length-1)
+    for(i <- 1 until numAsArray.length){
+      var numIndex = numArrReverse(i)
       if((i%2) != 0){
         totalNumber+= numTimes2(numIndex)
       }else{
@@ -20,7 +27,6 @@ object CreditCardNumberChecker extends App {
       }
     }
     totalNumber += idNum
-
     totalNumber%10 == 0
   }
 
@@ -37,20 +43,18 @@ object CreditCardNumberChecker extends App {
     }
   }
 
-  def checkNumAdder(numString:String):Unit ={
-    val a = Array.range(0,9)
-    val b = a.toString
-    if(luhnAlgorithm(numString)){
-      println("Number is VALID " + numString)
+  def checkNumAdder(numString:Array[Int]):Unit ={
+  val replacementNums = Array.range(0,10)
+  if(luhnAlgorithm(numString)){
+      println("Number is VALID " + numInput)
     }else{
-      println(numString.toInt)
-      print("Number is INVALID")
-      for(i <- b){
-        if(luhnAlgorithm(numString+i)){
-          println(numString+i)
+      println("Number is INVALID")
+      for(i <- replacementNums.indices){
+        numString(numString.length-1) = i
+        if(luhnAlgorithm(numString)){
+          println("New VALID number: " + numString.mkString(""))
         }
       }
     }
   }
-
-} // use arrays instead of string, easier to work witH
+}
