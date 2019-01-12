@@ -1,10 +1,8 @@
-object MorseCodeTranslator extends App{
+object MorseCodeTranslator extends App {
   import scala.io.StdIn.{readLine, readInt}
-
-  menu()
-
   var newWord:String = ""
 
+  menu()
   def menu(){
     println("Select function\n1) Morse to English\n2) English to Morse")
     val numSelect = readInt
@@ -80,43 +78,43 @@ object MorseCodeTranslator extends App{
 
   def engToMorse(letterInput:String):String = {
     letterInput match {
-      case "a" => ".-/"
-      case "b" => "-.../"
-      case "c" => "-.-./"
-      case "d" => "-../"
-      case "e" => "./"
-      case "f" => "..-./"
-      case "g" => "--./"
-      case "h" => "..../"
-      case "i" => "../"
-      case "j" => ".---/"
-      case "k" => "-.-/"
-      case "l" => ".-../"
-      case "m" => "--/"
-      case "n" => "-./"
-      case "o" => "---/"
-      case "p" => ".--./"
-      case "q" => "--.-/"
-      case "r" => ".-./"
-      case "s" => ".../"
-      case "t" => "-/"
-      case "u" => "../"
-      case "v" => "...-/"
-      case "w" => ".--/"
-      case "x" => "-..-/"
-      case "y" => "-.--/"
-      case "z" => "--../"
+      case "a" => ".- "
+      case "b" => "-... "
+      case "c" => "-.-. "
+      case "d" => "-.. "
+      case "e" => ". "
+      case "f" => "..-. "
+      case "g" => "--. "
+      case "h" => ".... "
+      case "i" => ".. "
+      case "j" => ".--- "
+      case "k" => "-.- "
+      case "l" => ".-.. "
+      case "m" => "-- "
+      case "n" => "-. "
+      case "o" => "--- "
+      case "p" => ".--. "
+      case "q" => "--.- "
+      case "r" => ".-. "
+      case "s" => "... "
+      case "t" => "- "
+      case "u" => ".. "
+      case "v" => "...- "
+      case "w" => ".-- "
+      case "x" => "-..- "
+      case "y" => "-.-- "
+      case "z" => "--.. "
       case " " => "/"
-      case "1" => ".----/"
-      case "2" => "..---/"
-      case "3" => "...--/"
-      case "4" => "....-/"
-      case "5" => "...../"
-      case "6" => "-..../"
-      case "7" => "--.../"
-      case "8" => "---../"
-      case "9" => "----./"
-      case "0" => "-----/"
+      case "1" => ".---- "
+      case "2" => "..--- "
+      case "3" => "...-- "
+      case "4" => "....- "
+      case "5" => "..... "
+      case "6" => "-.... "
+      case "7" => "--... "
+      case "8" => "---.. "
+      case "9" => "----. "
+      case "0" => "----- "
       case _ => ""
     }
 
