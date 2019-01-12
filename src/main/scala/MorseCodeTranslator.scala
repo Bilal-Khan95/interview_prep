@@ -25,6 +25,15 @@ object MorseCodeTranslator extends App{
 
   }
 
+  def menuReload2ElectricBoogaloo(){
+    println("Would you like to go again?\n1) Yes\n2) No")
+    val num2 = readInt()
+    num2 match{
+      case 1 => menu()
+      case _ => println("END")
+    }
+  }
+
   def morseToEng(letterInput:String):String = {
     letterInput match {
       case ".-" => "a"
@@ -66,6 +75,7 @@ object MorseCodeTranslator extends App{
       case "-----" => "0"
       case _ => ""
     }
+
   }
 
   def engToMorse(letterInput:String):String = {
@@ -109,6 +119,7 @@ object MorseCodeTranslator extends App{
       case "0" => "-----/"
       case _ => ""
     }
+
   }
 
   def morseTranslator(){
@@ -118,6 +129,7 @@ object MorseCodeTranslator extends App{
       newWord += morseToEng(wordInput(i))
     }
     println(newWord)
+    menuReload2ElectricBoogaloo()
   }
 
   def engTranslator(){
@@ -127,5 +139,6 @@ object MorseCodeTranslator extends App{
       newWord += engToMorse(wordInput.substring(i,i+1))
     }
     println(newWord)
+    menuReload2ElectricBoogaloo()
   }
 }
