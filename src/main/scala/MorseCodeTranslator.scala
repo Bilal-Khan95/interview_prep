@@ -132,7 +132,7 @@ object MorseCodeTranslator extends App {
 
   def engTranslator(){
     println("Enter a some words")
-    val wordInput = readLine
+    val wordInput = readLine.toLowerCase()
     for(i<- wordInput.indices){
       newWord += engToMorse(wordInput.substring(i,i+1))
     }
