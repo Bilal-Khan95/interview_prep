@@ -7,6 +7,9 @@ object Hangman extends App{
   val wordSource = Source.fromFile("C:/Users/Admin/Documents/Bilals Stuff/Bilal - Scala/enable1.txt").getLines.toArray
   val word = wordGenerator()
   var underscoredWord = wordToUnderscore(word)
+  var noGuesses = 0
+  var noIncorrect = 0
+
   startMenu()
   def startMenu(): Unit = {
     println("Welcome to Hangman\nPress 1 to start game")
